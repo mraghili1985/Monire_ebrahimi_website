@@ -1,0 +1,7 @@
+# Temporary extraction and page files
+assets/
+simples/
+*.pdf
+*.log
+.DS_Store
+Thumbs.db
