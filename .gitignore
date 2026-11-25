@@ -1,5 +1,4 @@
 # Temporary extraction and page files
-assets/
 simples/
 *.pdf
 *.log

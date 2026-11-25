@@ -3,303 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>منیره ابراهیمی | طراح ارشد بسته‌بندی، هویت بصری و عکاسی صنعتی</title>
-  <meta name="description" content="پورتفولیوی تخصصی منیره ابراهیمی - طراح ارشد بسته‌بندی، لیبل تجاری، مسلط به خروجی چاپ افست و فلکسو و عکاسی تبلیغاتی با بیش از ۱۰ سال سابقه">
+  <title>منیره ابراهیمی | طراح گرافیک، بسته‌بندی و عکاس صنعتی</title>
+  <meta name="description" content="پورتفولیوی تخصصی منیره ابراهیمی - طراح بسته‌بندی، لیبل تجاری، مسلط به خروجی چاپ افست و فلکسو و عکاسی تبلیغاتی با بیش از ۱۰ سال سابقه">
   
   <!-- Fonts: Vazirmatn (Persian) + Syne & Plus Jakarta Sans (English) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@500;700;800&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              lavender: '#8E7AA8',
-              lavenderLight: '#B8A8CE',
-              lavenderSoft: '#F2EDF7',
-              lavenderDark: '#5E4A78',
-              beige: '#CBB790',
-              beigeLight: '#E8DDC6',
-              beigeSoft: '#F6F1E7',
-              beigeDark: '#9C855A',
-              lightBg: '#FAF8F5',
-              lightSurface: '#FFFFFF',
-              lightBorder: 'rgba(142, 122, 168, 0.16)',
-              dark: '#0C0E14',
-              cardDark: '#151924'
-            }
-          },
-          fontFamily: {
-            fa: ['Vazirmatn', 'sans-serif'],
-            en: ['Plus Jakarta Sans', 'sans-serif'],
-            display: ['Syne', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
+  <script src="assets/tailwind-config.js"></script>
 
-  <style>
-    /* Light theme typography & aesthetics */
-    body {
-      background-color: #FAF8F5;
-      color: #232733;
-      font-family: 'Vazirmatn', sans-serif;
-      overflow-x: hidden;
-      selection-background-color: #8E7AA8;
-      selection-color: #FFFFFF;
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
-    
-    html[dir="ltr"] body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    .display-font {
-      font-family: 'Syne', sans-serif;
-    }
-
-    /* Ambient Glow with Lavender & Beige */
-    .glow-lavender {
-      background: radial-gradient(circle, rgba(142, 122, 168, 0.12) 0%, transparent 70%);
-    }
-    .glow-beige {
-      background: radial-gradient(circle, rgba(203, 183, 144, 0.16) 0%, transparent 70%);
-    }
-
-    /* Glassmorphism Navigation */
-    .glass-nav {
-      background: rgba(250, 248, 245, 0.85);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(142, 122, 168, 0.14);
-    }
-
-    /* Light Theme Cards with 3D Depth support */
-    .glass-card {
-      background: #FFFFFF;
-      border: 1px solid rgba(142, 122, 168, 0.15);
-      box-shadow: 0 4px 20px -2px rgba(28, 22, 38, 0.04);
-      transform-style: preserve-3d;
-      transition: transform 0.15s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-    }
-
-    /* Dynamic 3D Glare sheen overlay */
-    .glare-overlay {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      border-radius: inherit;
-      background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.35) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      mix-blend-mode: overlay;
-      z-index: 15;
-    }
-
-    /* Elegant arched frame matching PDF brand mark */
-    .arch-frame {
-      border-radius: 9999px 9999px 24px 24px;
-      overflow: hidden;
-    }
-
-    /* Filter Tag Badges */
-    .tag-badge {
-      border: 1px solid rgba(142, 122, 168, 0.18);
-      background: #FFFFFF;
-      color: #4A4453;
-      backdrop-filter: blur(8px);
-      transition: all 0.25s ease;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-    }
-    .tag-badge:hover {
-      border-color: #8E7AA8;
-      background: #F4EFF8;
-      color: #5E4A78;
-      transform: translateY(-2px);
-    }
-    .tag-badge.active {
-      border-color: #8E7AA8;
-      background: #8E7AA8;
-      color: #FFFFFF;
-      box-shadow: 0 4px 15px rgba(142, 122, 168, 0.28);
-    }
-
-    /* Custom subtle scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #F0ECE4;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #C4B7D7;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #8E7AA8;
-    }
-
-    /* Modal Backdrop */
-    .modal-backdrop {
-      background: rgba(25, 20, 32, 0.65);
-      backdrop-filter: blur(16px);
-    }
-
-    /* Shimmer text for light mode */
-    .shimmer-text {
-      background: linear-gradient(135deg, #1A1820 0%, #6E5A8A 55%, #9C855A 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* Dark Mode overrides when toggled */
-    .dark body {
-      background-color: #0C0E14;
-      color: #EDE8F2;
-    }
-    .dark .glass-nav {
-      background: rgba(12, 14, 20, 0.85);
-      border-bottom: 1px solid rgba(216, 199, 164, 0.1);
-    }
-    .dark .glass-card {
-      background: rgba(21, 25, 36, 0.7);
-      border: 1px solid rgba(216, 199, 164, 0.12);
-      box-shadow: none;
-    }
-    .dark .shimmer-text {
-      background: linear-gradient(135deg, #FBF8F3 0%, #D8C7A4 45%, #C4B7D7 80%, #A898BE 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .dark .tag-badge {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.1);
-      color: #B8A8CE;
-    }
-    .dark .tag-badge.active {
-      background: rgba(203, 183, 144, 0.2);
-      border-color: #CBB790;
-      color: #E8DDC6;
-    }
-
-    /* ========================================================
-       3D PACKAGING VIEWER STYLES: SHAHANG BISDATE BOX
-       Width: 320px, Height: 90px, Depth: 166px
-       ======================================================== */
-    .stage-3d {
-      perspective: 1400px;
-      perspective-origin: 50% 50%;
-      user-select: none;
-    }
-
-    .box-3d {
-      width: 320px;
-      height: 90px;
-      position: relative;
-      transform-style: preserve-3d;
-      transition: transform 0.08s ease-out;
-      cursor: grab;
-    }
-    .box-3d:active {
-      cursor: grabbing;
-    }
-
-    .face-3d {
-      position: absolute;
-      box-sizing: border-box;
-      border: 1px solid rgba(203, 183, 144, 0.4);
-      backface-visibility: visible;
-      background-size: 100% 100%;
-      background-position: center;
-      transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s ease;
-    }
-
-    /* Half Dimensions:
-       Half Depth = 83px
-       Half Width = 160px
-       Half Height = 45px
-    */
-    .face-front {
-      width: 320px;
-      height: 90px;
-      transform: translateZ(83px);
-      background-image: url('site_assets/shahang/face_front.jpg');
-    }
-    .face-back {
-      width: 320px;
-      height: 90px;
-      transform: rotateY(180deg) translateZ(83px);
-      background-image: url('site_assets/shahang/face_back.jpg');
-    }
-    .face-left {
-      width: 166px;
-      height: 90px;
-      left: 77px;
-      transform: rotateY(-90deg) translateZ(160px);
-      background-image: url('site_assets/shahang/face_left.jpg');
-    }
-    .face-right {
-      width: 166px;
-      height: 90px;
-      left: 77px;
-      transform: rotateY(90deg) translateZ(160px);
-      background-image: url('site_assets/shahang/face_right.jpg');
-    }
-    .face-top {
-      width: 320px;
-      height: 166px;
-      top: -38px;
-      transform: rotateX(90deg) translateZ(45px);
-      background-image: url('site_assets/shahang/face_top.jpg');
-    }
-    .face-bottom {
-      width: 320px;
-      height: 166px;
-      top: -38px;
-      transform: rotateX(-90deg) translateZ(45px);
-      background-image: url('site_assets/shahang/face_bottom.jpg');
-    }
-
-    /* Unfolded Dieline Container */
-    .dieline-view-wrapper {
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    /* Soft 3D Ground Shadow */
-    .ground-shadow-3d {
-      width: 340px;
-      height: 70px;
-      background: radial-gradient(ellipse at center, rgba(30, 20, 45, 0.28) 0%, transparent 70%);
-      filter: blur(10px);
-      border-radius: 50%;
-      transform: rotateX(85deg) translateZ(-110px);
-      pointer-events-none;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    .dark .ground-shadow-3d {
-      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6) 0%, transparent 70%);
-    }
-
-    /* 3D floating animation */
-    @keyframes floatY {
-      0%, 100% { transform: translateY(0px) rotateX(24deg) rotateY(-32deg); }
-      50% { transform: translateY(-14px) rotateX(18deg) rotateY(-20deg); }
-    }
-    .auto-float {
-      animation: floatY 6s ease-in-out infinite;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/style.css">
+  <script>try{if(localStorage.getItem("theme")==="dark"){document.documentElement.classList.add("dark");document.documentElement.classList.remove("light")}}catch(e){}</script>
 </head>
 <body class="antialiased min-h-screen relative flex flex-col justify-between">
 
@@ -393,7 +113,7 @@
           <!-- Pill Tag: Lavender & Beige Light Theme with 3D Sparkle -->
           <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-lavender/30 bg-brand-lavenderSoft text-brand-lavenderDark text-xs font-bold tracking-wide w-fit mb-6 shadow-sm">
             <span class="w-2 h-2 rounded-full bg-brand-lavender animate-pulse"></span>
-            <span data-i18n="hero_pill">طراح ارشد بسته‌بندی، هویت بصری و عکاسی صنعتی</span>
+            <span data-i18n="hero_pill">طراح گرافیک، بسته‌بندی و عکاس صنعتی</span>
           </div>
 
           <!-- Bold Editorial Headline -->
@@ -406,6 +126,12 @@
           <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl font-normal" data-i18n="hero_bio">
             من <strong class="text-slate-900 font-bold">منیره ابراهیمی</strong> هستم؛ فارغ‌التحصیل گرافیک با بیش از <strong class="text-brand-lavenderDark font-bold">۱۰ سال سابقه تخصصی (از سال ۱۳۹۴)</strong> در زمینه خلق هویت بصری برندها، مهندسی خط تیغ و طراحی بسته‌بندی صنایع آرایشی، غذایی و صنعتی. تسلط کامل بر خروجی فایل‌های آماده برای چاپ‌های صنعتی افست و فلکسو و عکاسی حرفه‌ای استودیویی از محصول، پیونددهنده ایده تا ظهور درخشان کالای شما در قفسه بازار است.
           </p>
+          <div class="flex flex-wrap items-center gap-2 mb-8" aria-label="Software">
+            <span class="design-label ml-2 mr-2">SOFTWARE</span>
+            <span class="skill-pill">Adobe Photoshop</span><span class="skill-pill">Adobe Illustrator</span>
+            <span class="skill-pill">Adobe InDesign</span><span class="skill-pill">CorelDRAW</span><span class="skill-pill">Photography</span>
+          </div>
+
 
           <!-- Core Competencies Tags with 3D Hover elevation -->
           <div class="flex flex-wrap gap-2.5 mb-10">
@@ -452,7 +178,7 @@
             <!-- Foreground Card with Arch -->
             <div class="relative bg-white p-3.5 arch-frame border border-brand-lavender/30 shadow-2xl glass-card">
               <div class="glare-overlay"></div>
-              <div class="arch-frame overflow-hidden bg-gradient-to-b from-[#F2EDF7] to-[#E8DDC6] h-[460px] relative">
+              <div class="arch-frame overflow-hidden bg-gradient-to-b from-[#E3E4EF] to-[#EADBB7] h-[460px] relative">
                 <img src="site_assets/portrait.png" alt="منیره ابراهیمی" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-60"></div>
                 
@@ -471,7 +197,7 @@
 
             <!-- Floating Badge: 10+ Years -->
             <div class="absolute -top-4 -left-4 sm:-left-6 bg-white px-4 py-3 rounded-2xl border border-brand-beigeDark/30 flex items-center gap-3 shadow-xl z-20" style="transform: translateZ(45px);">
-              <div class="text-2xl font-black text-brand-beigeDark font-mono">۱۰+</div>
+              <div class="text-2xl font-black text-brand-beigeDark">۱۰+</div>
               <div class="text-[11px] leading-tight text-slate-700 font-bold" data-i18n="badge_years">سال سابقه<br>طراحی حرفه‌ای</div>
             </div>
 
@@ -491,7 +217,48 @@
          NEW SECTION: THE INTERACTIVE 3D PACKAGING LAB
          Features the real 3D Box of "Shahang BisDate", 360° mouse drag, and Fold/Unfold CAD Blueprint!
          ========================================================================= -->
-    <section id="lab3d" class="py-16 bg-gradient-to-b from-[#FAF8F5] via-[#F2ECF7]/50 to-[#FAF8F5] border-y border-brand-lavender/20 relative overflow-hidden">
+
+    <!-- DESIGN LIST: overview of work areas (from the PDF portfolio index) -->
+    <section id="design-list" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="flex items-end gap-6 mb-10">
+        <h2 class="display-font text-5xl sm:text-7xl text-brand-lavenderDark leading-none">MY DESIGN<br>LIST</h2>
+        <span class="slash-lg hidden sm:block" aria-hidden="true"></span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12">
+        <a href="#projects" onclick="filterProjects('label')" class="design-row group">
+          <span class="design-num" data-count-cat="label">00</span>
+          <span class="slash-sm" aria-hidden="true"></span>
+          <span class="flex flex-col"><span class="design-label">LABEL DESIGN</span><span class="text-lg sm:text-2xl font-bold text-slate-900 group-hover:text-brand-lavenderDark transition-colors">طراحی لیبل</span></span>
+          <i data-lucide="arrow-left" class="w-5 h-5 mr-auto text-brand-lavenderDark opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </a>
+        <a href="#projects" onclick="filterProjects('billboard')" class="design-row group">
+          <span class="design-num" data-count-cat="billboard">00</span>
+          <span class="slash-sm" aria-hidden="true"></span>
+          <span class="flex flex-col"><span class="design-label">BILLBOARD DESIGN</span><span class="text-lg sm:text-2xl font-bold text-slate-900 group-hover:text-brand-lavenderDark transition-colors">طراحی بیلبورد و محیطی</span></span>
+          <i data-lucide="arrow-left" class="w-5 h-5 mr-auto text-brand-lavenderDark opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </a>
+        <a href="#projects" onclick="filterProjects('packaging')" class="design-row group">
+          <span class="design-num" data-count-cat="packaging">00</span>
+          <span class="slash-sm" aria-hidden="true"></span>
+          <span class="flex flex-col"><span class="design-label">PACKAGING DESIGN</span><span class="text-lg sm:text-2xl font-bold text-slate-900 group-hover:text-brand-lavenderDark transition-colors">طراحی بسته‌بندی</span></span>
+          <i data-lucide="arrow-left" class="w-5 h-5 mr-auto text-brand-lavenderDark opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </a>
+        <a href="#projects" onclick="filterProjects('branding')" class="design-row group">
+          <span class="design-num" data-count-cat="branding">00</span>
+          <span class="slash-sm" aria-hidden="true"></span>
+          <span class="flex flex-col"><span class="design-label">LOGO & BRAND IDENTITY</span><span class="text-lg sm:text-2xl font-bold text-slate-900 group-hover:text-brand-lavenderDark transition-colors">طراحی لوگو و هویت بصری</span></span>
+          <i data-lucide="arrow-left" class="w-5 h-5 mr-auto text-brand-lavenderDark opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </a>
+        <a href="#projects" onclick="filterProjects('photography')" class="design-row group">
+          <span class="design-num" data-count-cat="photography">00</span>
+          <span class="slash-sm" aria-hidden="true"></span>
+          <span class="flex flex-col"><span class="design-label">ADVERTISING PHOTOGRAPHY</span><span class="text-lg sm:text-2xl font-bold text-slate-900 group-hover:text-brand-lavenderDark transition-colors">عکاسی تبلیغاتی و صنعتی</span></span>
+          <i data-lucide="arrow-left" class="w-5 h-5 mr-auto text-brand-lavenderDark opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </a>
+      </div>
+    </section>
+
+    <section id="lab3d" class="py-16 bg-gradient-to-b from-[#ECEDF1] via-[#E3E4EF]/50 to-[#ECEDF1] border-y border-brand-lavender/20 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -609,29 +376,29 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div class="p-5 rounded-2xl bg-white border border-brand-lavender/15 shadow-sm tilt-card">
           <div class="glare-overlay"></div>
-          <div class="text-3xl sm:text-4xl font-black text-slate-900 font-mono mb-1">۱۰+ سال</div>
+          <div class="text-3xl sm:text-4xl font-black text-slate-900 mb-1">۱۰+ سال</div>
           <div class="text-xs text-slate-500 font-medium" data-i18n="stat_exp">تجربه تخصصی از سال ۱۳۹۴</div>
         </div>
         <div class="p-5 rounded-2xl bg-white border border-brand-beige/40 shadow-sm tilt-card">
           <div class="glare-overlay"></div>
-          <div class="text-3xl sm:text-4xl font-black text-brand-beigeDark font-mono mb-1">+۵۰ برند</div>
+          <div class="text-3xl sm:text-4xl font-black text-brand-beigeDark mb-1">۳ صنعت</div>
           <div class="text-xs text-slate-500 font-medium" data-i18n="stat_brands">صنایع آرایشی، غذایی و صنعتی</div>
         </div>
         <div class="p-5 rounded-2xl bg-white border border-brand-lavender/15 shadow-sm tilt-card">
           <div class="glare-overlay"></div>
-          <div class="text-3xl sm:text-4xl font-black text-brand-lavenderDark font-mono mb-1">افست و فلکسو</div>
+          <div class="text-3xl sm:text-4xl font-black text-brand-lavenderDark mb-1">افست و فلکسو</div>
           <div class="text-xs text-slate-500 font-medium" data-i18n="stat_press">تسلط به فرآیندهای فنی چاپ</div>
         </div>
         <div class="p-5 rounded-2xl bg-white border border-brand-beige/40 shadow-sm tilt-card">
           <div class="glare-overlay"></div>
-          <div class="text-3xl sm:text-4xl font-black text-brand-beigeDark font-mono mb-1">استودیو</div>
+          <div class="text-3xl sm:text-4xl font-black text-brand-beigeDark mb-1">استودیو</div>
           <div class="text-xs text-slate-500 font-medium" data-i18n="stat_studio">عکاسی صنعتی اختصاصی محصول</div>
         </div>
       </div>
     </section>
 
     <!-- SECTION 2: CURATED SHOWCASE (With Shahang BisDate 3D Mockup & Euphoria) -->
-    <section id="featured" class="py-20 bg-[#F4F0E8]/70 border-y border-brand-beige/20">
+    <section id="featured" class="py-20 bg-[#E4E5EB]/70 border-y border-brand-beige/20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -648,7 +415,7 @@
         <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
 
           <!-- Card 1: NEW! Shahang BisDate 3D Project (Wide 8 Columns) -->
-          <div onclick="openProjectModal('shahang_bisdate')" class="cursor-pointer md:col-span-8 group relative rounded-3xl overflow-hidden glass-card h-[420px] sm:h-[480px] tilt-card">
+          <a href="projects/shahang_bisdate.html" class="block cursor-pointer md:col-span-8 group relative rounded-3xl overflow-hidden glass-card h-[420px] sm:h-[480px] tilt-card">
             <div class="glare-overlay"></div>
             <img src="site_assets/shahang_3d_card.jpg" alt="Shahang BisDate 3D Packaging" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent"></div>
@@ -669,10 +436,10 @@
                 طراحی جعبه کارتنی بیسکویت خرمایی دارچینی بدون شکر افزوده با ساختار استاندارد مقوای ایندربرد ۳۰۰ گرم و خط تیغ مهندسی‌شده.
               </p>
             </div>
-          </div>
+          </a>
 
           <!-- Card 2: Euphoria Hydra Plus Series (4 Columns) -->
-          <div onclick="openProjectModal('euphoria_cream')" class="cursor-pointer md:col-span-4 group relative rounded-3xl overflow-hidden glass-card h-[420px] sm:h-[480px] tilt-card">
+          <a href="projects/euphoria_cream.html" class="block cursor-pointer md:col-span-4 group relative rounded-3xl overflow-hidden glass-card h-[420px] sm:h-[480px] tilt-card">
             <div class="glare-overlay"></div>
             <img src="site_assets/euphoria_cream.jpg" alt="Euphoria Hydra Plus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent"></div>
@@ -690,10 +457,10 @@
                 لیبل متالایز ضدآب بطری‌های ۲۵۰ میلی‌لیتری با تفکیک رنگی عصاره‌ها و طلاکوب گرم.
               </p>
             </div>
-          </div>
+          </a>
 
           <!-- Card 3: Maghsoudi Traditional Gaz Box (4 Columns) -->
-          <div onclick="openProjectModal('maghsoudi')" class="cursor-pointer md:col-span-4 group relative rounded-3xl overflow-hidden glass-card h-[380px] tilt-card">
+          <a href="projects/maghsoudi.html" class="block cursor-pointer md:col-span-4 group relative rounded-3xl overflow-hidden glass-card h-[380px] tilt-card">
             <div class="glare-overlay"></div>
             <img src="site_assets/maghsoudi_gaz.jpg" alt="Maghsoudi Gaz" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -707,10 +474,10 @@
               <h3 class="text-lg sm:text-xl font-bold text-white mb-1 group-hover:text-brand-beigeLight transition-colors">جعبه فاخر گز مقصودی</h3>
               <p class="text-slate-200 text-xs line-clamp-2 font-light">هاردباکس لوکس با شمسه اسلیمی مسجد شیخ‌لطف‌الله و طلاکوب برجسته.</p>
             </div>
-          </div>
+          </a>
 
           <!-- Card 4: 3D Urban Billboard (4 Columns) -->
-          <div onclick="openProjectModal('meral_icecream')" class="cursor-pointer md:col-span-4 group relative rounded-3xl overflow-hidden glass-card h-[380px] tilt-card">
+          <a href="projects/meral_icecream.html" class="block cursor-pointer md:col-span-4 group relative rounded-3xl overflow-hidden glass-card h-[380px] tilt-card">
             <div class="glare-overlay"></div>
             <img src="site_assets/meral_icecream_beach.jpg" alt="Meral Ice Cream 3D Billboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -724,10 +491,10 @@
               <h3 class="text-lg sm:text-xl font-bold text-white mb-1 group-hover:text-brand-beigeLight transition-colors">کمپین بیلبورد ۳بعدی مارال</h3>
               <p class="text-slate-200 text-xs line-clamp-2 font-light">رندرینگ سه‌بعدی لارج‌فرمت شهری با فضای پرانرژی ساحلی تابستان.</p>
             </div>
-          </div>
+          </a>
 
           <!-- Card 5: Industrial Automotive B.M.G (4 Columns) -->
-          <div onclick="openProjectModal('bmg_pump')" class="cursor-pointer md:col-span-4 group relative rounded-3xl overflow-hidden glass-card h-[380px] tilt-card">
+          <a href="projects/bmg_pump.html" class="block cursor-pointer md:col-span-4 group relative rounded-3xl overflow-hidden glass-card h-[380px] tilt-card">
             <div class="glare-overlay"></div>
             <img src="site_assets/bmg_waterpump.jpg" alt="B.M.G Industrial Water Pump" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -741,7 +508,7 @@
               <h3 class="text-lg sm:text-xl font-bold text-white mb-1 group-hover:text-brand-beigeLight transition-colors">بسته‌بندی واترپمپ خودرو B.M.G</h3>
               <p class="text-slate-200 text-xs line-clamp-2 font-light">کارتن ای‌فلوت مقاوم به همراه گرافیک فنی سه‌بعدی و راهنمای نصب.</p>
             </div>
-          </div>
+          </a>
 
         </div>
 
@@ -790,7 +557,7 @@
     </section>
 
     <!-- SECTION 4: THE TECHNICAL PRE-PRESS ADVANTAGE (Why Monire Ebrahimi) -->
-    <section id="prepress" class="py-20 bg-gradient-to-b from-[#F2ECE1]/80 to-[#FAF8F5] border-t border-brand-beige/25">
+    <section id="prepress" class="py-20 bg-gradient-to-b from-[#E4E5EB]/80 to-[#ECEDF1] border-t border-brand-beige/25">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -852,7 +619,7 @@
                 <span class="text-brand-lavenderDark font-mono font-bold">350 GR C1S | 640 x 295 mm</span>
               </div>
               <img src="site_assets/hairdryer_dieline.jpg" alt="Technical Packaging Dieline" class="w-full rounded-2xl object-cover hover:scale-[1.02] transition-transform duration-500 border border-slate-100">
-              <div class="p-3 bg-[#FAF8F5] rounded-xl mt-3 flex items-center justify-between text-xs text-slate-700">
+              <div class="p-3 bg-[#ECEDF1] rounded-xl mt-3 flex items-center justify-between text-xs text-slate-700">
                 <span class="flex items-center gap-2 font-medium">
                   <span class="w-2.5 h-2.5 rounded-full bg-brand-lavender"></span> خط تیغ برش (Cut)
                   <span class="w-2.5 h-2.5 rounded-full bg-brand-beigeDark ml-2"></span> خط تا (Crease)
@@ -895,7 +662,7 @@
               </a>
 
               <!-- Call Direct with Warm Paper Style -->
-              <a href="tel:+989226056014" class="px-6 py-4 rounded-2xl border border-slate-300 hover:border-slate-800 bg-[#FAF8F5] text-slate-900 font-bold text-sm flex items-center justify-center gap-3 transition-all shadow-sm hover:scale-[1.02]">
+              <a href="tel:+989226056014" class="px-6 py-4 rounded-2xl border border-slate-300 hover:border-slate-800 bg-[#ECEDF1] text-slate-900 font-bold text-sm flex items-center justify-center gap-3 transition-all shadow-sm hover:scale-[1.02]">
                 <i data-lucide="phone" class="w-5 h-5 text-brand-lavenderDark"></i>
                 <span>۰۹۲۲ ۶۰۵ ۶۰۱۴</span>
               </a>
@@ -914,7 +681,7 @@
           </div>
 
           <!-- Quick Inquiry Card -->
-          <div class="lg:col-span-5 bg-[#FAF8F5] p-6 sm:p-8 rounded-2xl border border-brand-lavender/25 shadow-sm">
+          <div class="lg:col-span-5 bg-[#ECEDF1] p-6 sm:p-8 rounded-2xl border border-brand-lavender/25 shadow-sm">
             <h3 class="text-slate-900 font-bold text-lg mb-2" data-i18n="inquiry_title">استعلام سریع پروژه</h3>
             <p class="text-xs text-slate-500 mb-6 font-normal" data-i18n="inquiry_desc">مشخصات اولیه محصول خود را بفرستید تا بررسی و زمان‌بندی اعلام شود.</p>
             
@@ -952,7 +719,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="border-t border-brand-lavender/15 py-10 bg-[#F4F0E8]/80">
+  <footer class="border-t border-brand-lavender/15 py-10 bg-[#E4E5EB]/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600 font-medium">
       <div class="flex items-center gap-2">
         <span class="text-slate-900 font-bold">منیره ابراهیمی</span>
@@ -965,491 +732,9 @@
     </div>
   </footer>
 
-  <!-- CASE STUDY MODAL / DRAWER -->
-  <div id="projectModal" class="fixed inset-0 z-50 modal-backdrop hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
-    <div class="relative w-full max-w-4xl bg-white border border-brand-lavender/30 rounded-3xl overflow-hidden shadow-2xl my-8 max-h-[90vh] flex flex-col">
-      
-      <!-- Modal Header -->
-      <div class="p-6 border-b border-slate-100 flex items-center justify-between bg-[#FAF8F5]/90 sticky top-0 z-10 backdrop-blur-md">
-        <div>
-          <span id="modalCategory" class="text-brand-lavenderDark text-xs font-mono uppercase tracking-wider font-bold">CATEGORY</span>
-          <h3 id="modalTitle" class="text-xl sm:text-2xl font-bold text-slate-900 mt-0.5">Project Title</h3>
-        </div>
-        <button onclick="closeProjectModal()" class="w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 flex items-center justify-center text-slate-700 hover:text-slate-900 transition-colors">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-
-      <!-- Modal Body (Scrollable) -->
-      <div class="p-6 sm:p-8 overflow-y-auto space-y-8 bg-white">
-        
-        <!-- Big Hero Visual with 3D Depth -->
-        <div class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 max-h-[500px] tilt-card">
-          <div class="glare-overlay"></div>
-          <img id="modalHeroImg" src="" alt="" class="w-full h-full object-cover">
-        </div>
-
-        <!-- Meta Specs Badges Grid in Light Mode -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-2xl bg-[#FAF8F5] border border-brand-lavender/15 text-xs">
-          <div>
-            <div class="text-slate-500 uppercase tracking-wider mb-1 font-semibold" data-i18n="modal_client">کارفرما / برند</div>
-            <div id="modalClient" class="text-slate-900 font-bold">-</div>
-          </div>
-          <div>
-            <div class="text-slate-500 uppercase tracking-wider mb-1 font-semibold" data-i18n="modal_year">سال اجرا</div>
-            <div id="modalYear" class="text-slate-900 font-bold font-mono">-</div>
-          </div>
-          <div>
-            <div class="text-slate-500 uppercase tracking-wider mb-1 font-semibold" data-i18n="modal_print">تکنیک چاپ</div>
-            <div id="modalPrint" class="text-brand-lavenderDark font-bold">-</div>
-          </div>
-          <div>
-            <div class="text-slate-500 uppercase tracking-wider mb-1 font-semibold" data-i18n="modal_material">متریال / ساختار</div>
-            <div id="modalMaterial" class="text-slate-900 font-bold">-</div>
-          </div>
-        </div>
-
-        <!-- Narrative Story -->
-        <div>
-          <h4 class="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
-            <i data-lucide="book-open" class="w-4 h-4 text-brand-lavenderDark"></i>
-            <span data-i18n="modal_narrative_title">روایت و استراتژی دیزاین</span>
-          </h4>
-          <p id="modalDesc" class="text-slate-600 text-sm leading-relaxed font-normal">
-            -
-          </p>
-        </div>
-
-        <!-- Color Palette Swatches -->
-        <div id="modalPaletteContainer">
-          <h4 class="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
-            <i data-lucide="palette" class="w-4 h-4 text-brand-beigeDark"></i>
-            <span data-i18n="modal_palette_title">پالت رنگی فنی و کدهای استاندارد چاپ</span>
-          </h4>
-          <div id="modalSwatches" class="flex flex-wrap gap-3">
-            <!-- Swatches dynamically inserted -->
-          </div>
-        </div>
-
-        <!-- Gallery / Secondary Views -->
-        <div id="modalGalleryContainer">
-          <h4 class="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
-            <i data-lucide="image" class="w-4 h-4 text-brand-lavenderDark"></i>
-            <span data-i18n="modal_gallery_title">زوایای دیگر و شات‌های صنعتی</span>
-          </h4>
-          <div id="modalGallery" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <!-- Gallery items dynamically inserted -->
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="p-4 sm:p-6 border-t border-slate-100 bg-[#FAF8F5] flex items-center justify-between">
-        <a id="modalWaInquire" href="https://wa.me/989226056014" target="_blank" class="px-5 py-2.5 rounded-full bg-slate-900 hover:bg-brand-lavenderDark text-white font-bold text-xs flex items-center gap-2 transition-colors shadow-md">
-          <i data-lucide="message-square" class="w-4 h-4 text-brand-beigeLight"></i>
-          <span data-i18n="modal_btn_inquire">استعلام پروژه مشابه</span>
-        </a>
-        <button onclick="closeProjectModal()" class="text-xs font-bold text-slate-500 hover:text-slate-900" data-i18n="modal_btn_close">بستن پنجره</button>
-      </div>
-
-    </div>
-  </div>
-
   <!-- JAVASCRIPT DATA & LOGIC WITH 3D SHAHANG BISDATE BOX -->
+  <script src="assets/projects-data.js"></script>
   <script>
-    // Comprehensive Project Database directly extracted from PDF + New Shahang Project
-    const projectsData = [
-      {
-        id: 'shahang_bisdate',
-        category: 'packaging',
-        categoryEn: 'Food & Confectionery',
-        categoryFa: 'صنایع غذایی و بیسکویت',
-        titleEn: 'Shahang BisDate 3D Confectionery Packaging',
-        titleFa: 'بسته‌بندی سه‌بعدی بیسکویت خرمایی شاهنگ (BisDate)',
-        client: 'شرکت زرین‌نام اصفهان',
-        year: '1405 / 2024',
-        heroImg: 'site_assets/shahang_3d_card.jpg',
-        printMethod: 'چاپ افست ۵ رنگ ورقی با تفکیک ترام بالا',
-        material: 'مقوای ایندربرد بهداشتی ۳۰۰ گرم فودگرید',
-        descFa: 'طراحی جامع بسته‌بندی بیسکویت خرمایی دارچینی بدون شکر افزوده شاهنگ (کد KHS700) با ترکیب تصویرسازی بافت خرما، چوب دارچین و گندم تازه. خط تیغ مهندسی‌شده درب قفل‌شو، زبانه چسب صنعتی و جانمایی استاندارد جداول ارزش غذایی و نشان سیب سلامت.',
-        descEn: 'Complete packaging architecture for Shahang BisDate (Cinnamon Date Biscuits - No Added Sugar). 300 GSM food-grade SBS board, 5-color offset printing, matte velvet lamination, spot UV, and precision industrial folding dieline.',
-        palette: [
-          { name: 'Date Brown', hex: '#703722' },
-          { name: 'Wheat Cream', hex: '#F5EFE6' },
-          { name: 'Gilded Biscuit', hex: '#D2AC67' },
-          { name: 'Sugar-Free Red', hex: '#D32F2F' }
-        ],
-        gallery: [
-          'site_assets/shahang/dieline_full.jpg',
-          'site_assets/shahang_3d_mockup.jpg'
-        ]
-      },
-      {
-        id: 'euphoria_cream',
-        category: 'packaging',
-        categoryEn: 'Packaging & Labels',
-        categoryFa: 'بسته‌بندی و لیبل',
-        titleEn: 'Euphoria Hydra Plus Skin Care Cream Series',
-        titleFa: 'سری کرم‌های آبرسان هیدرا پلاس ایفوریا',
-        client: 'Euphoria Cosmetic Group',
-        year: '2023 - 2024',
-        heroImg: 'site_assets/euphoria_cream.jpg',
-        printMethod: 'چاپ فلکسوگرافی ۸ رنگ رول',
-        material: 'لیبل متالایز ضدآب + سلفون مات',
-        descFa: 'طراحی هویت لیبل و بسته‌بندی سری کرم‌های آبرسان دست و صورت هیدرا پلاس در رایحه‌ها و عصاره‌های بلوبری، آلوئه‌ورا، هلو و روغن آرگان. انتخاب پالت رنگی شاداب و متمایز با طلاکوب گرم عنوان و حفظ خوانایی کامل جدول ترکیبات و بارکد استاندارد.',
-        descEn: 'Packaging and label design for Euphoria Hydra Plus face and hand cream series across blueberry, aloe vera, peach, and argan oil variants. Crafted with vibrant distinct color palettes, hot gold foil stamping, and waterproof substrates.',
-        palette: [
-          { name: 'Hydra Cyan', hex: '#00A8B5' },
-          { name: 'Aloe Green', hex: '#2E7D32' },
-          { name: 'Peach Warm', hex: '#E65100' },
-          { name: 'Soft Lavender', hex: '#A898BE' },
-          { name: 'Sand Beige', hex: '#D8C7A4' }
-        ],
-        gallery: [
-          'site_assets/euphoria_cream_series.jpg'
-        ]
-      },
-      {
-        id: 'hairdryer',
-        category: 'packaging',
-        categoryEn: 'Structural Packaging',
-        categoryFa: 'بسته‌بندی ساختاری و صنعتی',
-        titleEn: 'Curls Hair Dryer Dispenser Technical Packaging',
-        titleFa: 'جعبه سشوار و دیسپانسر مو با نقشه فنی تیغ',
-        client: 'Curls Professional Care',
-        year: '2022',
-        heroImg: 'site_assets/hairdryer_box.jpg',
-        printMethod: 'چاپ افست ۵ رنگ ورقی',
-        material: 'مقوای ایندربرد ۳۵۰ گرم C1S',
-        descFa: 'طراحی ساختاری و گرافیکی جعبه دیسپانسر مو با پنجره نمایش و مقاومت فیزیکی بالا. این پروژه شامل ترسیم مهندسی خط تیغ CAD با ابعاد گسترده ۶۴۰x۲۹۵ میلی‌متر، سلفون مات، یووی موضعی براق و امباس برجسته‌سازی لوگوی S است.',
-        descEn: 'Structural packaging and engineering dieline for hair dryer dispenser box. 350 GSM C1S board, matte thermal lamination, spot UV, and embossed branding with precise CAD diecut tolerances.',
-        palette: [
-          { name: 'Teal Green', hex: '#009688' },
-          { name: 'Rich Charcoal', hex: '#232733' },
-          { name: 'Warm Beige', hex: '#D8C7A4' }
-        ],
-        gallery: [
-          'site_assets/hairdryer_dieline.jpg'
-        ]
-      },
-      {
-        id: 'maghsoudi',
-        category: 'packaging',
-        categoryEn: 'Luxury Traditional Sweets',
-        categoryFa: 'بسته‌بندی فاخر شیرینی سنتی',
-        titleEn: 'Maghsoudi Gaz Persian Luxury Heritage Box',
-        titleFa: 'جعبه فاخر گز صادراتی مقصودی',
-        client: 'گز اصیل مقصودی اصفهان',
-        year: '2023',
-        heroImg: 'site_assets/maghsoudi_gaz.jpg',
-        printMethod: 'چاپ افست با تفکیک ترام بالا',
-        material: 'هاردباکس کرجی + گلاسه ۱۷۰ گرم',
-        descFa: 'طراحی جعبه کادویی هاردباکس لوکس گز با الهام از شاهکار نقوش کاشی‌کاری شمسه مسجد شیخ‌لطف‌الله اصفهان. تلفیق کالیگرافی طلایی نستعلیق با زمینه مینی‌مال سفید برای ایجاد پرستیژ صادراتی به بازارهای بین‌المللی.',
-        descEn: 'Luxury gift hard-box packaging for Maghsoudi Gaz, inspired by authentic Persian blue floral tilework from Sheikh Lotfollah Mosque, enhanced with hot-stamped gold foil and velvet lamination.',
-        palette: [
-          { name: 'Persian Blue', hex: '#0D47A1' },
-          { name: 'Warm Beige', hex: '#D8C7A4' },
-          { name: 'Ivory Base', hex: '#F9F9F6' }
-        ],
-        gallery: [
-          'site_assets/goharbar_gaz.jpg'
-        ]
-      },
-      {
-        id: 'meral_icecream',
-        category: 'billboard',
-        categoryEn: '3D Billboard & Campaigns',
-        categoryFa: 'بیلبورد و تبلیغات محیطی ۳بعدی',
-        titleEn: 'Meral Ice Cream Urban 3D Outdoor Campaign',
-        titleFa: 'کمپین بیلبوردهای ۳بعدی شهری بستنی مارال',
-        client: 'صنایع لبنی و بستنی مارال',
-        year: '2023',
-        heroImg: 'site_assets/meral_icecream_beach.jpg',
-        printMethod: 'طراحی لارج‌فرمت شهری ۳بعدی',
-        material: 'نمایشگرهای سه‌بعدی و بنرهای بزرگ',
-        descFa: 'طراحی کمپین‌های محیطی تابستانه و زمستانه بستنی مارال با تلفیق مدل‌سازی سه‌بعدی بستنی‌های میوه‌ای و شکلاتی در فضای پلازای ساحلی و قله‌های برفی، با بالاترین نرخ جلب توجه مخاطبان شهری.',
-        descEn: 'High-impact 3D outdoor billboard advertising for Meral Ice Cream, featuring photorealistic 3D popsicle modeling across vibrant summer beach scenes and winter chocolate mountain vistas.',
-        palette: [
-          { name: 'Meral Amber', hex: '#FFB300' },
-          { name: 'Aqua Blue', hex: '#00B0FF' },
-          { name: 'Soft Lavender', hex: '#A898BE' }
-        ],
-        gallery: [
-          'site_assets/meral_icecream_summer.jpg',
-          'site_assets/meral_icecream_winter.jpg',
-          'site_assets/meral_icecream_strawberry.jpg'
-        ]
-      },
-      {
-        id: 'bmg_pump',
-        category: 'packaging',
-        categoryEn: 'Industrial Packaging',
-        categoryFa: 'بسته‌بندی صنعتی و فنی',
-        titleEn: 'B.M.G Heavy Duty Water Pump Packaging',
-        titleFa: 'بسته‌بندی صنعتی واترپمپ خودرو B.M.G',
-        client: 'ابتکار صنعت B.M.G',
-        year: '2023',
-        heroImg: 'site_assets/bmg_waterpump.jpg',
-        printMethod: 'چاپ افست ۴ رنگ لمینتی',
-        material: 'کارتن ای‌فلوت ۳ لایه مقاوم به ضربه',
-        descFa: 'بسته‌بندی مقاوم برای قطعات سنگین مکانیکی خودرو با ترکیب لاین‌آرت سه‌بعدی قطعه صنعتی، جدول دستورالعمل نصب و نشان گارانتی ۶ ماهه با پالت رنگی مشکی-قرمز هیجانی.',
-        descEn: 'Rugged industrial box packaging for automotive water pumps. Engineered with E-flute corrugated cardboard, oil-resistant matte coating, 3D line-art exploded technical views, and warranty badges.',
-        palette: [
-          { name: 'Racing Red', hex: '#D32F2F' },
-          { name: 'Industrial Charcoal', hex: '#212121' },
-          { name: 'Warm Beige', hex: '#D8C7A4' }
-        ],
-        gallery: [
-          'site_assets/gmb_waterpump.jpg'
-        ]
-      },
-      {
-        id: 'laurion_box',
-        category: 'packaging',
-        categoryEn: 'Tableware & Home',
-        categoryFa: 'لوازم خانگی و پذیرایی',
-        titleEn: 'Laurion Hard Porcelain 29-Piece Dinner Set',
-        titleFa: 'جعبه سرویس چینی ۲۹ پارچه لوریون',
-        client: 'Laurion Luxury Tableware',
-        year: '2023',
-        heroImg: 'site_assets/laurion_porcelain_box.jpg',
-        printMethod: 'افست ۵ رنگ با ورنی براق',
-        material: 'کارتن دایکاتی سنگین لمینت‌شده',
-        descFa: 'طراحی بسته‌بندی کارتن مادر سرویس چینی فاخر ۲۹ پارچه با زمینه قرمز ماربل شاهانه و نقوش فلورال طلایی همراه با پنجره نمایش چیدمان ظروف داخل جعبه.',
-        descEn: 'Master luxury carton packaging for Laurion 29-piece porcelain dinnerware, featuring royal red marble textures, gilded floral filigree, and a transparent showcase window.',
-        palette: [
-          { name: 'Royal Crimson', hex: '#880E4F' },
-          { name: 'Warm Beige', hex: '#D8C7A4' },
-          { name: 'Pure White', hex: '#FFFFFF' }
-        ],
-        gallery: []
-      },
-      {
-        id: 'newkam_biscuits',
-        category: 'packaging',
-        categoryEn: 'Food & Confectionery',
-        categoryFa: 'صنایع غذایی و بیسکویت',
-        titleEn: 'Newkam Biscuits Packaging & Master Cartons',
-        titleFa: 'بسته‌بندی و کارتن مادر بیسکویت نیوکام',
-        client: 'صنایع غذایی نیوکام',
-        year: '2022',
-        heroImg: 'site_assets/newkam_biscuits.jpg',
-        printMethod: 'چاپ فلکسوگرافی ترام‌ریز',
-        material: 'کارتن کرافت باکیفیت و مقوای ایندربرد',
-        descFa: 'تصویرسازی نوستالژیک کامیون کلاسیک برای القای حس سنت و کیفیت آرد تازه در کنار خطوط منظم عمودی برای طعم‌های پرتقالی و نارگیلی با هدف ایجاد چیدمان شاخص در فروشگاه.',
-        descEn: 'Packaging and master box design for Newkam Biscuits. Combines vintage bakery delivery truck artwork with bold flavor color blocking (Orange & Coconut) for strong shelf presence.',
-        palette: [
-          { name: 'Kraft Beige', hex: '#D8C7A4' },
-          { name: 'Citrus Orange', hex: '#FF6F00' },
-          { name: 'Soft Lavender', hex: '#A898BE' }
-        ],
-        gallery: [
-          'site_assets/newkam_orange_coconut.jpg'
-        ]
-      },
-      {
-        id: 'smile_burger',
-        category: 'packaging',
-        categoryEn: 'Fast Food & Food Grade',
-        categoryFa: 'بسته‌بندی فست‌فود و غذا',
-        titleEn: 'Smile Burger Food-Grade Packaging & Identity',
-        titleFa: 'طراحی بسته همبرگر اس‌مایل با هویت پویا',
-        client: 'Googi Burger Fastfood',
-        year: '2022',
-        heroImg: 'site_assets/smile_burger.jpg',
-        printMethod: 'افست فودگرید با مرکب گیاهی',
-        material: 'مقوای بهداشتی ایندربرد ۲۸۰ گرم',
-        descFa: 'طراحی پترن زرد و سبز شطرنجی، کاراکتر جذاب همبرگر و قفل‌های تهویه بخار اختصاصی در ساختار جعبه برای حفظ تازگی و حرارت برگر حین ارسال دلیوری.',
-        descEn: 'Vibrant yellow and green fast-food packaging suite for Smile Burger, featuring food-safe inks, custom ventilation tabs, and an energetic character logo.',
-        palette: [
-          { name: 'Burger Yellow', hex: '#FDD835' },
-          { name: 'Fresh Green', hex: '#388E3C' }
-        ],
-        gallery: []
-      },
-      {
-        id: 'farahak_snack',
-        category: 'packaging',
-        categoryEn: 'Kids Snacks',
-        categoryFa: 'تنقلات و اسنک کودک',
-        titleEn: 'Farahak Snack Ringy & Fingers Packaging',
-        titleFa: 'بسته‌بندی اسنک و پفک کودک فراهک',
-        client: 'صنایع غذایی فراهک',
-        year: '2023',
-        heroImg: 'site_assets/farahak_snack.jpg',
-        printMethod: 'چاپ افست ۴ رنگ با سلفون براق',
-        material: 'مقوای ایندربرد با مقاومت در برابر چربی',
-        descFa: 'طراحی فانتزی بسته‌بندی اسنک با کاراکترهای خندان، پالت‌های رنگی جذاب زرد و آبی و تصویرسازی حلقه‌ها و خلال‌های ترد در پیک‌نیک شاد کودکان.',
-        descEn: 'Whimsical and joyful packaging design for Farahak kids extruded snacks, utilizing vibrant storytelling, cheerful mascots, and high-gloss protective finishes.',
-        palette: [
-          { name: 'Sky Blue', hex: '#29B6F6' },
-          { name: 'Sun Yellow', hex: '#FBC02D' }
-        ],
-        gallery: []
-      },
-      {
-        id: 'ardavan_faucet',
-        category: 'packaging',
-        categoryEn: 'Sanitary & Hardware',
-        categoryFa: 'شیرآلات بهداشتی و ساختمانی',
-        titleEn: 'Ardavan Sanitary Faucet Minimalist Packaging',
-        titleFa: 'بسته‌بندی مینیمال شیرآلات ساختمانی اردوان',
-        client: 'صنایع شیرآلات اردوان',
-        year: '2022',
-        heroImg: 'site_assets/ardavan_faucet.jpg',
-        printMethod: 'چاپ دورنگ افست مینیمال',
-        material: 'کارتن لمینتی با دسته حمل پلاستیکی',
-        descFa: 'بسته‌بندی با هویت بصری مینیمال، ترسیم خطی مدل شیرآلات، کارت ضمانت ۶۰ ماهه و برچسب‌های آویز سبز رنگ برای القای پاکیزگی و کیفیت ساخت برتر.',
-        descEn: 'Clean minimalist packaging design for Ardavan sanitary faucets, pairing elegant technical line art with a fresh green accent palette, guarantee tags, and built-in carry handles.',
-        palette: [
-          { name: 'Eco Green', hex: '#2E7D32' },
-          { name: 'Beige Paper', hex: '#D8C7A4' }
-        ],
-        gallery: []
-      },
-      {
-        id: 'negin_light',
-        category: 'packaging',
-        categoryEn: 'Electrical & Industrial',
-        categoryFa: 'تجهیزات روشنایی و صنعتی',
-        titleEn: 'Negin Light 100W Industrial Projector Box',
-        titleFa: 'بسته‌بندی پروژکتور صنعتی نگین لایت ۱۰۰ وات',
-        client: 'صنایع روشنایی نگین لایت',
-        year: '2023',
-        heroImg: 'site_assets/negin_light.jpg',
-        printMethod: 'لیتوگرافی و چاپ افست مقاوم',
-        material: 'کارتن ۵ لایه ضد رطوبت و ضربه',
-        descFa: 'طراحی بسته‌بندی تجهیزات نورپردازی صنعتی با بافت زرد و خاکستری متالیک، درج استانداردهای بین‌المللی مقاومت در برابر نفوذ آب IP65 و نشانگر مصرف بهینه برق.',
-        descEn: 'Heavy-duty industrial projector packaging design featuring safety caution yellow patterns, IP65 waterproof certification icons, and comprehensive technical spec tables.',
-        palette: [
-          { name: 'Caution Yellow', hex: '#F9A825' },
-          { name: 'Dark Metal', hex: '#263238' }
-        ],
-        gallery: []
-      },
-      {
-        id: 'euphoria_deo',
-        category: 'label',
-        categoryEn: 'Label & Cosmetic Series',
-        categoryFa: 'لیبل و محصولات آرایشی',
-        titleEn: 'Euphoria Roll-on Deodorant Label Architecture',
-        titleFa: 'معماری لیبل دئودورانت‌های رولی ایفوریا',
-        client: 'Euphoria Brand',
-        year: '2023',
-        heroImg: 'site_assets/euphoria_deo.jpg',
-        printMethod: 'چاپ رول یووی فلکسو با تکنیک بدون پس‌زمینه',
-        material: 'فیلم شفاف متالایز ضد الکل و سایش',
-        descFa: 'طراحی لیبل بطری‌های شفاف ۵۰ میلی‌لیتری رول دئودورانت در طیف‌های مردانه و زنانه با پالت رنگی شارپ، حفظ شفافیت مایع داخل ظرف و نشان ماندگاری ۲۴ ساعته.',
-        descEn: 'Clear-on-clear label architecture for Euphoria 50ml roll-on antiperspirants, balancing bold color-coded product variants with transparent windows to display the fluid.',
-        palette: [
-          { name: 'Energy Red', hex: '#D50000' },
-          { name: 'Lavender Mood', hex: '#A898BE' },
-          { name: 'Sport Blue', hex: '#1A237E' }
-        ],
-        gallery: [
-          'site_assets/euphoria_deo_ice.jpg'
-        ]
-      },
-      {
-        id: 'euphoria_billboards',
-        category: 'billboard',
-        categoryEn: 'City Billboards & Displays',
-        categoryFa: 'بیلبوردهای غول‌پیکر شهری',
-        titleEn: 'Euphoria Luxury Fragrance Outdoor Billboards',
-        titleFa: 'بیلبوردهای شبانه عطریات ایفوریا روی برج‌های تجاری',
-        client: 'Euphoria Fragrance Gallery',
-        year: '2023',
-        heroImg: 'site_assets/euphoria_billboard_jeanpaul.jpg',
-        printMethod: 'رندرهای لایت‌باکس و بیلبورد شهری',
-        material: 'سازه بیلبوردهای عظیم شبانه',
-        descFa: 'طراحی جلوه‌های بصری و کمپین بیلبوردهای نایت‌مود بر روی ساختمان‌های بزرگ تجاری در کنار برندهای معتبر بین‌المللی با تمرکز بر قطرات آب و نورپردازی لوکس شبانه.',
-        descEn: 'Architectural scale outdoor billboards for luxury fragrances including Jean Paul Gaultier and Euphoria Body Sprays on prime illuminated night facades.',
-        palette: [
-          { name: 'Night Sapphire', hex: '#0D47A1' },
-          { name: 'Muted Lavender', hex: '#A898BE' },
-          { name: 'Warm Beige', hex: '#D8C7A4' }
-        ],
-        gallery: [
-          'site_assets/euphoria_billboard_spray.jpg',
-          'site_assets/euphoria_billboard_atrium.jpg',
-          'site_assets/euphoria_perfume_luxury.jpg'
-        ]
-      },
-      {
-        id: 'hanry_beauty',
-        category: 'branding',
-        categoryEn: 'Brand Identity & Packaging',
-        categoryFa: 'هویت بصری و بسته‌بندی لوکس',
-        titleEn: 'HANRY Trichologist & Skin Beauty Complete Identity',
-        titleFa: 'هویت برند و بسته‌بندی کلینیک زیبایی پوست و مو هنری',
-        client: 'HANRY Skin & Scalp Clinic',
-        year: '2023',
-        heroImg: 'site_assets/hanry_beauty.jpg',
-        printMethod: 'افست لوکس با پالت اختصاصی کالیبره‌شده',
-        material: 'جعبه کرمی مخملی با کارت‌های بافت‌دار',
-        descFa: 'طراحی لوگوتایپ تلفیقی پروانه و فرم مو، پالت رنگی انحصاری (#8F4041 خرمایی، #1C5F58 سبز یشمی، #F3E8E8 کرم ابریشمی)، ست اوراق اداری و ظروف شیشه‌ای سرم پوست.',
-        descEn: 'Comprehensive brand identity, custom butterfly-hair monogram, and soothing tactile packaging suite for HANRY Trichology & Skin Care with custom Pantone specifications.',
-        palette: [
-          { name: 'Burgundy Earth', hex: '#8F4041' },
-          { name: 'Forest Emerald', hex: '#1C5F58' },
-          { name: 'Silk Cream', hex: '#F3E8E8' },
-          { name: 'Lavender Touch', hex: '#A898BE' }
-        ],
-        gallery: [
-          'site_assets/palette_hanry.png'
-        ]
-      },
-      {
-        id: 'sillage_parfum',
-        category: 'branding',
-        categoryEn: 'Luxury Branding',
-        categoryFa: 'هویت بصری و پکیجینگ عطر',
-        titleEn: 'Sillage Parfums Monogram & Black Gold Packaging',
-        titleFa: 'لوگو، کالیگرافی و جعبه عطر لوکس سیلاژ',
-        client: 'Sillage Parfums House',
-        year: '2024',
-        heroImg: 'site_assets/sillage_parfum.jpg',
-        printMethod: 'چاپ مشکی عمیق با طلاکوب مات اختصاصی',
-        material: 'هاردباکس شیاردار با پلاک فلزی طلایی',
-        descFa: 'خلق تایپوگرافی ظریف با امواج روان عطر، شعار Leave an Lasting Impression، لیبل دایره‌ای طلاکوب روی بطری کریستال شیاردار و جعبه دست‌ساز لوکس.',
-        descEn: 'Artisanal monogram, fluid typography, and opulent black & gold perfume packaging for Sillage Parfums (#D2AB67 gold and absolute obsidian black).',
-        palette: [
-          { name: 'Beige Gold', hex: '#D8C7A4' },
-          { name: 'Obsidian Charcoal', hex: '#232733' },
-          { name: 'Smoky Lavender', hex: '#A898BE' }
-        ],
-        gallery: [
-          'site_assets/palette_sillage.png'
-        ]
-      },
-      {
-        id: 'photo_lipstick',
-        category: 'photography',
-        categoryEn: 'Advertising Photography',
-        categoryFa: 'عکاسی تبلیغاتی و خلاقانه',
-        titleEn: 'Conceptual Razor & Crimson Lipstick Still Life',
-        titleFa: 'عکاسی مفهومی و استودیویی رژ لب سرخ و تیغ',
-        client: 'Advertising Concept Series',
-        year: '2023',
-        heroImg: 'site_assets/photo_lipstick_razor.jpg',
-        printMethod: 'عکاسی استودیویی با سنسور فول‌فریم',
-        material: 'نورپردازی هاردلایت با تفکیک بافت متریال',
-        descFa: 'یک شات متمایز و متهورانه تبلیغاتی در بک‌گراند تیره مطلق؛ برش نرم رژ لب با تیغ فولادی تیز که لطافت موم و درخشش فلز را با نورپردازی دقیق میکروسکوپی به نمایش می‌گذارد.',
-        descEn: 'Conceptual beauty still-life photography contrasting the razor-sharp edge of steel against the velvety texture of deep crimson lipstick under precise studio illumination.',
-        palette: [
-          { name: 'Crimson Red', hex: '#C62828' },
-          { name: 'Pure White', hex: '#FFFFFF' },
-          { name: 'Warm Beige', hex: '#D8C7A4' },
-          { name: 'Soft Lavender', hex: '#A898BE' }
-        ],
-        gallery: [
-          'site_assets/photo_veron_nailpolish.jpg',
-          'site_assets/photo_filorga_cream.jpg',
-          'site_assets/photo_scoop_perfume.jpg'
-        ]
-      }
-    ];
 
     // Multilingual Translations Dictionary
     const translations = {
@@ -1463,7 +748,7 @@
         nav_prepress: 'تخصص چاپ و متریال',
         nav_contact: 'تماس و سفارش',
         btn_consultation: 'مشاوره پروژه',
-        hero_pill: 'طراح ارشد بسته‌بندی، هویت بصری و عکاسی صنعتی',
+        hero_pill: 'طراح گرافیک، بسته‌بندی و عکاس صنعتی',
         hero_h1_part1: 'خلق بسته‌بندی‌های متمایز',
         hero_h1_part2: 'با مهندسی دقیق چاپ و عکاسی',
         hero_bio: 'من منیره ابراهیمی هستم؛ فارغ‌التحصیل گرافیک با بیش از ۱۰ سال سابقه تخصصی (از سال ۱۳۹۴) در زمینه خلق هویت بصری برندها، مهندسی خط تیغ و طراحی بسته‌بندی صنایع آرایشی، غذایی و صنعتی. تسلط کامل بر خروجی فایل‌های آماده برای چاپ‌های صنعتی افست و فلکسو و عکاسی حرفه‌ای استودیویی از محصول، پیونددهنده ایده تا ظهور درخشان کالای شما در قفسه بازار است.',
@@ -1529,10 +814,10 @@
         nav_prepress: 'Print & Pre-Press',
         nav_contact: 'Contact',
         btn_consultation: 'Inquire Project',
-        hero_pill: 'Senior Graphic, Packaging & Industrial Photography',
+        hero_pill: 'Graphic Designer & Industrial Photographer',
         hero_h1_part1: 'Crafting Distinctive Packaging',
         hero_h1_part2: 'Through Pre-Press Mastery & Photography',
-        hero_bio: 'I am Monire Ebrahimi, a senior Graphic & Packaging Designer with 10+ years of professional mastery (since 2015). Specializing in structural dielines, luxury FMCG packaging, brand identity, and industrial product photography. Expert in press-ready offset and flexographic printing standards, ensuring seamless realization from digital vision to physical shelf excellence.',
+        hero_bio: 'I am Monire Ebrahimi, a Graphic & Packaging Designer with 10+ years of professional mastery (since 2015). Specializing in structural dielines, luxury FMCG packaging, brand identity, and industrial product photography. Expert in press-ready offset and flexographic printing standards, ensuring seamless realization from digital vision to physical shelf excellence.',
         skill_1: 'Packaging & Label Architecture',
         skill_2: 'Offset & Flexo Pre-Press Precision',
         skill_3: 'Commercial & Studio Photography',
@@ -1542,7 +827,7 @@
         badge_years: 'Years of Pro<br>Design Mastery',
         badge_prepress: '100% Press-Ready<br>Zero-Error Guarantee',
         stat_exp: '10+ Years of Craftsmanship',
-        stat_brands: '50+ Enterprise FMCG Brands',
+        stat_brands: 'Cosmetics, Food & Industrial',
         stat_press: 'Offset & Flexo Press Mastery',
         stat_studio: 'Dedicated Commercial Photography',
         featured_subtitle: 'Curated Excellence',
@@ -1592,6 +877,7 @@
     // Toggle Language Function
     function toggleLanguage() {
       currentLang = (currentLang === 'fa') ? 'en' : 'fa';
+      localStorage.setItem('lang', currentLang);
       document.documentElement.lang = currentLang;
       document.documentElement.dir = (currentLang === 'fa') ? 'rtl' : 'ltr';
       
@@ -1616,6 +902,7 @@
 
     function toggleTheme() {
       currentTheme = (currentTheme === 'light') ? 'dark' : 'light';
+      localStorage.setItem('theme', currentTheme);
       const htmlEl = document.documentElement;
       const themeIcon = document.getElementById('themeIcon');
 
@@ -1794,9 +1081,9 @@
         : projectsData.filter(p => p.category === filter);
 
       filtered.forEach((p, index) => {
-        const card = document.createElement('div');
+        const card = document.createElement('a');
+        card.href = `projects/${p.id}.html`;
         card.className = 'glass-card rounded-3xl overflow-hidden cursor-pointer group flex flex-col justify-between tilt-card';
-        card.onclick = () => openProjectModal(p.id);
 
         const title = (currentLang === 'fa') ? p.titleFa : p.titleEn;
         const categoryLabel = (currentLang === 'fa') ? p.categoryFa : p.categoryEn;
@@ -1806,7 +1093,7 @@
           <div class="glare-overlay"></div>
           <div>
             <div class="h-64 sm:h-72 w-full overflow-hidden relative bg-slate-100">
-              <img src="${p.heroImg}" alt="${title}" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+              <img loading="lazy" src="${p.heroImg}" alt="${title}" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>
               <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-[10px] font-bold bg-white/95 text-slate-900 border border-slate-200/80 shadow-sm" style="transform: translateZ(25px);">
                 ${categoryLabel}
@@ -1841,6 +1128,10 @@
     }
 
     function updateCategoryCounts() {
+      document.querySelectorAll('[data-count-cat]').forEach(el => {
+        const n = projectsData.filter(p => p.category === el.dataset.countCat).length;
+        el.innerText = String(n).padStart(2, '0');
+      });
       const categories = ['all', 'packaging', 'label', 'branding', 'billboard', 'photography'];
       categories.forEach(cat => {
         const el = document.getElementById(`count-${cat}`);
@@ -1864,92 +1155,7 @@
       renderProjects(cat);
     }
 
-    // Modal Details Handler
-    function openProjectModal(projectId) {
-      const p = projectsData.find(item => item.id === projectId);
-      if (!p) return;
 
-      const title = (currentLang === 'fa') ? p.titleFa : p.titleEn;
-      const categoryLabel = (currentLang === 'fa') ? p.categoryFa : p.categoryEn;
-      const desc = (currentLang === 'fa') ? p.descFa : p.descEn;
-
-      document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalCategory').innerText = categoryLabel;
-      document.getElementById('modalHeroImg').src = p.heroImg;
-      document.getElementById('modalClient').innerText = p.client;
-      document.getElementById('modalYear').innerText = p.year;
-      document.getElementById('modalPrint').innerText = p.printMethod;
-      document.getElementById('modalMaterial').innerText = p.material;
-      document.getElementById('modalDesc').innerText = desc;
-
-      // Render Swatches
-      const swatchesContainer = document.getElementById('modalSwatches');
-      swatchesContainer.innerHTML = '';
-      if (p.palette && p.palette.length > 0) {
-        document.getElementById('modalPaletteContainer').classList.remove('hidden');
-        p.palette.forEach(c => {
-          const swatch = document.createElement('div');
-          swatch.className = 'flex items-center gap-2.5 px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer hover:border-brand-lavenderDark transition-colors shadow-sm';
-          swatch.onclick = () => {
-            navigator.clipboard.writeText(c.hex);
-            alert(`کد رنگ ${c.hex} کپی شد!`);
-          };
-          swatch.innerHTML = `
-            <span class="w-5 h-5 rounded-full border border-slate-300 shadow-sm" style="background-color: ${c.hex};"></span>
-            <div class="flex flex-col text-left">
-              <span class="text-[11px] font-bold text-slate-800 leading-none">${c.name}</span>
-              <span class="text-[10px] font-mono text-slate-500 leading-none mt-1 font-semibold">${c.hex}</span>
-            </div>
-          `;
-          swatchesContainer.appendChild(swatch);
-        });
-      } else {
-        document.getElementById('modalPaletteContainer').classList.add('hidden');
-      }
-
-      // Render Gallery
-      const galleryContainer = document.getElementById('modalGallery');
-      galleryContainer.innerHTML = '';
-      if (p.gallery && p.gallery.length > 0) {
-        document.getElementById('modalGalleryContainer').classList.remove('hidden');
-        p.gallery.forEach(imgSrc => {
-          const imgEl = document.createElement('div');
-          imgEl.className = 'rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 h-56 shadow-sm tilt-card';
-          imgEl.innerHTML = `
-            <div class="glare-overlay"></div>
-            <img src="${imgSrc}" alt="${title}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-          `;
-          galleryContainer.appendChild(imgEl);
-        });
-      } else {
-        document.getElementById('modalGalleryContainer').classList.add('hidden');
-      }
-
-      // WhatsApp quick inquiry button
-      const waMsg = encodeURIComponent(`سلام خانم ابراهیمی، درباره پروژه "${title}" سوال داشتم.`);
-      document.getElementById('modalWaInquire').href = `https://wa.me/989226056014?text=${waMsg}`;
-
-      // Open Modal
-      document.getElementById('projectModal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      lucide.createIcons();
-      init3DCardTilt();
-    }
-
-    function closeProjectModal() {
-      document.getElementById('projectModal').classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-
-    // Close on Escape or click outside
-    window.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeProjectModal();
-    });
-    document.getElementById('projectModal').addEventListener('click', e => {
-      if (e.target.id === 'projectModal') closeProjectModal();
-    });
-
-    // Mobile Menu Toggle
     function toggleMobileMenu() {
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('hidden');
@@ -1972,7 +1178,10 @@
 
     // Init All on DOM load
     window.addEventListener('DOMContentLoaded', () => {
-      renderProjects('all');
+      // Restore saved preferences (language switches also re-render the grid)
+      if (localStorage.getItem('theme') === 'dark') { currentTheme = 'light'; toggleTheme(); }
+      if (localStorage.getItem('lang') === 'en') { toggleLanguage(); } else { renderProjects('all'); }
+      renderProjects(currentFilter);
       init3DBoxInteraction();
       init3DCardTilt();
       lucide.createIcons();

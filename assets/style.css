@@ -1,0 +1,263 @@
+    /* Light theme typography & aesthetics */
+    body {
+      background-color: #ECEDF1;
+      color: #232733;
+      font-family: 'Vazirmatn', sans-serif;
+      overflow-x: hidden;
+      selection-background-color: #2B2D7E;
+      selection-color: #FFFFFF;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    
+    html[dir="ltr"] body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .display-font {
+      font-family: 'Bebas Neue', sans-serif;
+    }
+
+    /* Ambient Glow with Lavender & Beige */
+    .glow-lavender {
+      background: radial-gradient(circle, rgba(43, 45, 126, 0.12) 0%, transparent 70%);
+    }
+    .glow-beige {
+      background: radial-gradient(circle, rgba(201, 165, 92, 0.16) 0%, transparent 70%);
+    }
+
+    /* Glassmorphism Navigation */
+    .glass-nav {
+      background: rgba(236, 237, 241, 0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(43, 45, 126, 0.14);
+    }
+
+    /* Light Theme Cards with 3D Depth support */
+    .glass-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(43, 45, 126, 0.15);
+      box-shadow: 0 4px 20px -2px rgba(28, 22, 38, 0.04);
+      transform-style: preserve-3d;
+      transition: transform 0.15s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    /* Dynamic 3D Glare sheen overlay */
+    .glare-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.35) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      mix-blend-mode: overlay;
+      z-index: 15;
+    }
+
+    /* Elegant arched frame matching PDF brand mark */
+    .arch-frame {
+      border-radius: 9999px 9999px 24px 24px;
+      overflow: hidden;
+    }
+
+    /* Filter Tag Badges */
+    .tag-badge {
+      border: 1px solid rgba(43, 45, 126, 0.18);
+      background: #FFFFFF;
+      color: #4A4453;
+      backdrop-filter: blur(8px);
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .tag-badge:hover {
+      border-color: #2B2D7E;
+      background: #E3E4EF;
+      color: #1B1D5A;
+      transform: translateY(-2px);
+    }
+    .tag-badge.active {
+      border-color: #2B2D7E;
+      background: #2B2D7E;
+      color: #FFFFFF;
+      box-shadow: 0 4px 15px rgba(43, 45, 126, 0.28);
+    }
+
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #D9DAE3;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #9FA1D3;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2B2D7E;
+    }
+
+    /* Modal Backdrop */
+    .modal-backdrop {
+      background: rgba(25, 20, 32, 0.65);
+      backdrop-filter: blur(16px);
+    }
+
+    /* Shimmer text for light mode */
+    .shimmer-text {
+      background: linear-gradient(135deg, #1A1820 0%, #2B2D7E 55%, #9A7B34 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Dark Mode overrides when toggled */
+    .dark body {
+      background-color: #0E0F24;
+      color: #EDE8F2;
+    }
+    .dark .glass-nav {
+      background: rgba(14, 15, 36, 0.85);
+      border-bottom: 1px solid rgba(214, 189, 131, 0.1);
+    }
+    .dark .glass-card {
+      background: rgba(23, 24, 58, 0.7);
+      border: 1px solid rgba(214, 189, 131, 0.12);
+      box-shadow: none;
+    }
+    .dark .shimmer-text {
+      background: linear-gradient(135deg, #FBF8F3 0%, #D6BD83 45%, #9FA1D3 80%, #9FA1D3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .dark .tag-badge {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.1);
+      color: #9FA1D3;
+    }
+    .dark .tag-badge.active {
+      background: rgba(201, 165, 92, 0.2);
+      border-color: #C9A55C;
+      color: #EADBB7;
+    }
+
+    /* ========================================================
+       3D PACKAGING VIEWER STYLES: SHAHANG BISDATE BOX
+       Width: 320px, Height: 90px, Depth: 166px
+       ======================================================== */
+    .stage-3d {
+      perspective: 1400px;
+      perspective-origin: 50% 50%;
+      user-select: none;
+    }
+
+    .box-3d {
+      width: 320px;
+      height: 90px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.08s ease-out;
+      cursor: grab;
+    }
+    .box-3d:active {
+      cursor: grabbing;
+    }
+
+    .face-3d {
+      position: absolute;
+      box-sizing: border-box;
+      border: 1px solid rgba(201, 165, 92, 0.4);
+      backface-visibility: visible;
+      background-size: 100% 100%;
+      background-position: center;
+      transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s ease;
+    }
+
+    /* Half Dimensions:
+       Half Depth = 83px
+       Half Width = 160px
+       Half Height = 45px
+    */
+    .face-front {
+      width: 320px;
+      height: 90px;
+      transform: translateZ(83px);
+      background-image: url('site_assets/shahang/face_front.jpg');
+    }
+    .face-back {
+      width: 320px;
+      height: 90px;
+      transform: rotateY(180deg) translateZ(83px);
+      background-image: url('site_assets/shahang/face_back.jpg');
+    }
+    .face-left {
+      width: 166px;
+      height: 90px;
+      left: 77px;
+      transform: rotateY(-90deg) translateZ(160px);
+      background-image: url('site_assets/shahang/face_left.jpg');
+    }
+    .face-right {
+      width: 166px;
+      height: 90px;
+      left: 77px;
+      transform: rotateY(90deg) translateZ(160px);
+      background-image: url('site_assets/shahang/face_right.jpg');
+    }
+    .face-top {
+      width: 320px;
+      height: 166px;
+      top: -38px;
+      transform: rotateX(90deg) translateZ(45px);
+      background-image: url('site_assets/shahang/face_top.jpg');
+    }
+    .face-bottom {
+      width: 320px;
+      height: 166px;
+      top: -38px;
+      transform: rotateX(-90deg) translateZ(45px);
+      background-image: url('site_assets/shahang/face_bottom.jpg');
+    }
+
+    /* Unfolded Dieline Container */
+    .dieline-view-wrapper {
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    /* Soft 3D Ground Shadow */
+    .ground-shadow-3d {
+      width: 340px;
+      height: 70px;
+      background: radial-gradient(ellipse at center, rgba(30, 20, 45, 0.28) 0%, transparent 70%);
+      filter: blur(10px);
+      border-radius: 50%;
+      transform: rotateX(85deg) translateZ(-110px);
+      pointer-events-none;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .dark .ground-shadow-3d {
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6) 0%, transparent 70%);
+    }
+
+    /* 3D floating animation */
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0px) rotateX(24deg) rotateY(-32deg); }
+      50% { transform: translateY(-14px) rotateX(18deg) rotateY(-20deg); }
+    }
+    .auto-float {
+      animation: floatY 6s ease-in-out infinite;
+    }
+
+/* ===== Theme: PDF portfolio x alij-design style ===== */
+.design-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;letter-spacing:.2em;font-weight:700;color:#2B2D7E;text-transform:uppercase}
+.skill-pill{padding:.4rem .9rem;border-radius:9999px;border:1px solid rgba(43,45,126,.25);background:#fff;font-size:12px;font-weight:600;color:#1B1D5A}
+.design-row{display:flex;align-items:center;gap:1.25rem;padding:1.25rem 0;border-bottom:1px solid rgba(43,45,126,.18);transition:padding .25s ease}
+.design-row:hover{padding-inline-start:.75rem}
+.design-num{font-family:'Bebas Neue',sans-serif;font-size:3.75rem;line-height:1;color:#2B2D7E;min-width:4.5rem;text-align:center}
+.slash-sm{display:block;width:1px;height:2.75rem;background:#2B2D7E;transform:rotate(30deg);opacity:.55}
+.slash-lg{display:block;width:2px;height:6rem;background:#2B2D7E;transform:rotate(35deg);opacity:.6;margin-bottom:.5rem}
+.dark .design-label,.dark .design-num{color:#9FA1D3}
+.dark .skill-pill{background:rgba(23,24,58,.7);color:#E3E4EF;border-color:rgba(159,161,211,.3)}
+.dark .design-row{border-color:rgba(159,161,211,.2)}
+.dark .design-row .text-slate-900{color:#F3F3F8}

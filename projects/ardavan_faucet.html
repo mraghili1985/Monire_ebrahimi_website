@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="light scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بسته‌بندی مینیمال شیرآلات ساختمانی اردوان | منیره ابراهیمی</title>
+  <meta name="description" content="بسته‌بندی با هویت بصری مینیمال، ترسیم خطی مدل شیرآلات، کارت ضمانت ۶۰ ماهه و برچسب‌های آویز سبز رنگ برای القای پاکیزگی و کیفیت ساخت برتر.">
+  <meta property="og:title" content="بسته‌بندی مینیمال شیرآلات ساختمانی اردوان">
+  <meta property="og:description" content="بسته‌بندی با هویت بصری مینیمال، ترسیم خطی مدل شیرآلات، کارت ضمانت ۶۰ ماهه و برچسب‌های آویز سبز رنگ برای القای پاکیزگی و کیفیت ساخت برتر.">
+  <meta property="og:image" content="../site_assets/ardavan_faucet.jpg">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../assets/tailwind-config.js"></script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <script>try{var d=document.documentElement;if(localStorage.getItem('theme')==='dark'){d.classList.add('dark');d.classList.remove('light')}if(localStorage.getItem('lang')==='en'){d.lang='en';d.dir='ltr'}}catch(e){}</script>
+</head>
+<body class="antialiased min-h-screen">
+  <header class="sticky top-0 z-40 glass-nav">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-3">
+        <span class="w-9 h-9 rounded-full border border-brand-lavender/40 flex items-center justify-center font-bold text-brand-lavenderDark">M</span>
+        <span id="brandName" class="font-bold text-slate-900 dark:text-white">منیره ابراهیمی</span>
+      </a>
+      <nav class="flex items-center gap-4 text-sm font-semibold text-slate-700 dark:text-slate-200">
+        <a id="navHome" href="../index.html" class="hidden sm:inline hover:text-brand-lavenderDark">صفحه اصلی</a>
+        <a id="navWorks" href="../index.html#projects" class="hidden sm:inline hover:text-brand-lavenderDark">نمونه‌کارها</a>
+        <button onclick="toggleTheme()" aria-label="theme" class="w-9 h-9 rounded-full border border-brand-lavender/30 flex items-center justify-center"><i id="themeIcon" data-lucide="moon" class="w-4 h-4"></i></button>
+        <button onclick="toggleLanguage()" class="px-3 py-1.5 rounded-full border border-brand-lavender/30 text-xs font-bold"><span id="langText">EN</span></button>
+      </nav>
+    </div>
+  </header>
+  <main id="app" class="max-w-5xl mx-auto px-4 sm:px-6 py-10"></main>
+  <script src="../assets/projects-data.js"></script>
+  <script>const PROJECT_ID = "ardavan_faucet";</script>
+  <script src="../assets/project-page.js"></script>
+</body>
+</html>
